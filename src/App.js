@@ -4,6 +4,7 @@ function App() {
   // add a state to determine cipher requests
   const [backendData, setBackendData] = useState([{}])
   const [cipheredSentence, setCipheredSentence] = useState("")
+  const [sentence, setSentence] = useState("")
   
 
   useEffect(() => {
@@ -41,10 +42,29 @@ function App() {
   const logData = () => () => {
     console.log("THIS IS THE DATA")
     fetch('/caesar').then(res => res.json()).then(data => setCipheredSentence(data.sentence))
+
+
     // what this does is bascially res is data and data is the json
-    
+
     
    
+  }
+
+  // create a function that takes the input from the form and sends it to the backend
+  // create a function that takes the output from the backend and displays it on the screen
+
+
+  const handleChange = (event) => {
+    {setSentence( event.target.value)};
+  }
+
+  const handleFormSubmit = (event) => {
+  //  alert('A name was submitted: ' + event.state.value);
+
+
+    event.preventDefault();
+    console.log('Submitted:', sentence);
+    setSentence("")
   }
 
 
@@ -63,6 +83,15 @@ function App() {
 
     {/* Make a hard coded post request on the press of a button that sends the sentences RPTHPG */}
     <button onClick = {logData()}> Send RPTHPG to the backend</button>
+
+    <form onSubmit={handleFormSubmit}>
+        <label>
+          Name:
+          <input type="text" value={sentence} onChange={handleChange} />
+        </label>
+        <input type="submit"/>
+      </form>
+    
     <h1> {cipheredSentence}</h1>
 
   
