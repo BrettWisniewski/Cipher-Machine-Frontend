@@ -62,37 +62,6 @@ function App() {
   const handleFormSubmit =  (event) => {
   //  alert('A name was submitted: ' + event.state.value);
 
-
-  // event.preventDefault();
-  // console.log('Submitted:', sentence);
-  // fetch('/caesar', {
-  //   method: 'POST',
-  //   headers: {
-  //     'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify({sentence: sentence})
-  //   }).then(res => res.json()).then(data => setCipheredSentence(data.sentence))
-  
-  // setSentence("")
-
-  // console.log('Submitted:', sentence);
-  // event.preventDefault();
-
-  //   try {
-  //     const response = await fetch('/caesar', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify({ input: sentence}),
-  //     });
-
-  //     const data = await response.json();
-  //     console.log(data); // Modified data received from the backend
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-
   event.preventDefault();
 
   // Send the form data to the Express backend
@@ -122,12 +91,6 @@ function App() {
       <h1>Backend Data</h1>
    {typeof backendData.users !== 'undefined' ? backendData.users.map(user => <div key={user}>{user}</div>) : null}
 
-    {/* create input form to send to the backend that consists of a ciphered sentence */}
-    {/* <form action="/api" method="post" >
-      <label for="sentence">Enter a sentence to be ciphered:</label><br></br>
-      <input type="text" id="sentence" name="sentence" value="Enter a sentence to be ciphered"></input><br></br>
-      <input type="submit" value="Submit"></input>
-    </form> */}
 
     {/* Make a hard coded post request on the press of a button that sends the sentences RPTHPG */}
     <button onClick = {logData()}> Send RPTHPG to the backend</button>
