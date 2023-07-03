@@ -30,6 +30,7 @@ function App() {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({sentence: sentence})
+        
       }).then(res => res.json()).then(data => console.log(data))
     }
   // create function that on press, sends the sentence hello to the backend
@@ -58,13 +59,60 @@ function App() {
     {setSentence( event.target.value)};
   }
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit =  (event) => {
   //  alert('A name was submitted: ' + event.state.value);
 
 
-    event.preventDefault();
-    console.log('Submitted:', sentence);
-    setSentence("")
+  // event.preventDefault();
+  // console.log('Submitted:', sentence);
+  // fetch('/caesar', {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify({sentence: sentence})
+  //   }).then(res => res.json()).then(data => setCipheredSentence(data.sentence))
+  
+  // setSentence("")
+
+  // console.log('Submitted:', sentence);
+  // event.preventDefault();
+
+  //   try {
+  //     const response = await fetch('/caesar', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({ input: sentence}),
+  //     });
+
+  //     const data = await response.json();
+  //     console.log(data); // Modified data received from the backend
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+
+  event.preventDefault();
+
+  // Send the form data to the Express backend
+  fetch('/api/submit', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ sentence: sentence })
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      // Handle the response from the backend if needed
+      console.log(data);
+    })
+    // .catch((error) => {
+    //   console.error('Error:', error);
+    // });
+
+
   }
 
 
@@ -84,7 +132,7 @@ function App() {
     {/* Make a hard coded post request on the press of a button that sends the sentences RPTHPG */}
     <button onClick = {logData()}> Send RPTHPG to the backend</button>
 
-    <form onSubmit={handleFormSubmit}>
+    <form onSubmit={handleFormSubmit} method = "POST">
         <label>
           Name:
           <input type="text" value={sentence} onChange={handleChange} />
