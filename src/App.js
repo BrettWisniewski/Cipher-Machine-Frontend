@@ -1,4 +1,8 @@
-import React, {useEffect, useState} from 'react'
+// import React, {useEffect, useState} from 'react'
+// want to import cube canvas here
+import React, { useEffect, useState, useRef } from 'react';
+import * as THREE from 'three';
+ import CubeCanvas from './CubeCanvas'
 
 function App() {
   // add a state to determine cipher requests
@@ -84,6 +88,12 @@ function App() {
 
   }
 
+  const cipherFormName = (event) => {
+    event.preventDefault();
+  }
+
+  // create cube canvas
+
 
   
   return (
@@ -104,6 +114,9 @@ function App() {
       </form>
     
     <h1> {cipheredSentence}</h1>
+    {/* // create cube canvas */}
+    <CubeCanvas/>
+    
 
   
 
