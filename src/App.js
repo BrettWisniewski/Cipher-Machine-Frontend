@@ -1,8 +1,41 @@
 // import React, {useEffect, useState} from 'react'
-// want to import cube canvas here
+// want to import cube canvas here 
+// threedimensional2011
+// "Enigma Machine" (https://skfb.ly/oBwzU) by ASHISH is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 import React, { useEffect, useState, useRef } from 'react';
 import * as THREE from 'three';
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
  import CubeCanvas from './CubeCanvas'
+ import MyScene from './MyScene';
+  import BitcoinLogo from './BitLogo';
+import SketchfabModel from './SketchfabModel';
+import { Canvas } from '@react-three/fiber';  
+import { OrbitControls, useGLTF } from '@react-three/drei';
+import GLTFLoaderComponent from './GLTFLoaderComponent';
+
+import ComputerModel from './ComputerModel';
+
+
+
+
+//  import React, { useEffect, useState, useRef } from 'react';
+// import * as THREE from 'three';
+// import { GLTFLoader } from 'gltf-loader-three';
+// import JSZip from 'jszip';
+// import CubeCanvas from './CubeCanvas';
+function Model(props) {
+  const { nodes, materials } = useGLTF('/scene.gltf')
+  return (
+    <group {...props} dispose={null} scale = {7}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
+        <group rotation={[Math.PI / 2, 0, 0]}>
+          <mesh geometry={nodes.defaultMaterial.geometry} material={materials.Part2} />
+          <mesh geometry={nodes.defaultMaterial_1.geometry} material={materials.Part1} />
+        </group>
+      </group>
+    </group>
+  )
+}
 
 function App() {
   // add a state to determine cipher requests
@@ -37,6 +70,9 @@ function App() {
         
       }).then(res => res.json()).then(data => console.log(data))
     }
+
+
+
   // create function that on press, sends the sentence hello to the backend
 
   const handleGet = (e) => {
@@ -115,7 +151,30 @@ function App() {
     
     <h1> {cipheredSentence}</h1>
     {/* // create cube canvas */}
+
+    {/* // individual scenes that are not needed
     <CubeCanvas/>
+    <BitcoinLogo/>
+    <MyScene/> */}
+    {/* <ComputerModel/> */}
+    
+    {/* <Canvas>
+        <ambientLight intensity={0.5} />
+        <ComputerModel />
+      </Canvas> */}
+
+
+    {/* <ComputerModel/> */}
+    {/* <Canvas>
+      <ambientLight intensity={0.5} />
+      <pointLight position={[10, 10, 10]} />
+      <SketchfabModel />
+      <OrbitControls />
+    </Canvas> */}
+
+    <Canvas><ambientLight/> <spotLight intensity={0.9} angle = {0.1}  penumbra = {1}  position = {[10,15,20]} castShadow /> <Model/> <OrbitControls enablePan ={true} enableRotate = {true} enableZoom = {true}/></Canvas>
+
+    
     
 
   
