@@ -1,0 +1,86 @@
+body {
+  background-color: #0a0a0a; /* #f2f2f2 Change the background color to #414345 */
+}
+/* for dark gray : #3b3a37 */
+.flex-container {
+  display: flex;
+}
+
+.left-section {
+  flex: 1;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 190px; /* Move margin to the right */
+}
+
+.circle-button {
+  width: 270px; /* Increase button width */
+  height: 120px; /* Increase button height */
+  border-radius: 50%;
+  background-color: black;
+  margin-bottom: 60px;
+  box-shadow: 0 0 10px white; /* Add box-shadow for glow effect */
+  animation: glowing 2s ease-in-out infinite; /* Add animation for glow effect */
+  color: white; /* Set the text color to white */
+  text-shadow: 0 0 10px white; /* Add text shadow for glowing effect */
+  font-size: 18px; /* Increase text size */
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.circle-button:hover {
+  transform: scale(1.2); /* Make the button bigger on hover */
+}
+
+.circle-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  opacity: 0;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+.circle-button:hover::after {
+  width: 500px;
+  height: 500px;
+  opacity: 1;
+}
+
+/* .circle-button.clicked {
+  animation: fadeOut 0.5s forwards; /* Add fade-out animation */
+
+
+
+.right-section {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width : 800px;
+  height : 800px;
+}
+
+
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 10px white;
+  }
+  50% {
+    box-shadow: 0 0 20px white, 0 0 30px white;
+  }
+  100% {
+    box-shadow: 0 0 10px white;
+  }
+}
