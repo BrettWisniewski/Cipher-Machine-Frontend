@@ -1,20 +1,7 @@
-// import React, {useEffect, useState} from 'react'
-// want to import cube canvas here 
-// threedimensional2011
-// "Enigma Machine" (https://skfb.ly/oBwzU) by ASHISH is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
 import React, { useEffect, useState, memo} from 'react';
- import * as THREE from 'three';
-// import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-//  import CubeCanvas from './CubeCanvas'
-//  import MyScene from './MyScene';
-//   import BitcoinLogo from './BitLogo';
-// import SketchfabModel from './SketchfabModel';
 import { Canvas } from '@react-three/fiber';  
 import { OrbitControls, useGLTF } from '@react-three/drei';
-// import GLTFLoaderComponent from './GLTFLoaderComponent';
-
-// import ComputerModel from './ComputerModel';
-// import css file
 import './App.css'
 
 import DatabaseSubmitter from './DatabaseSubmitter';
@@ -23,33 +10,8 @@ import DatabaseRetriever from './DatabaseRetriever';
 
 import ThreeButtons from './ThreeButtons';
 
-import CipherForm from './CipherForm';
 
 
-
-
-
-//  import React, { useEffect, useState, useRef } from 'react';
-// import * as THREE from 'three';
-// import { GLTFLoader } from 'gltf-loader-three';
-// import JSZip from 'jszip';
-// import CubeCanvas from './CubeCanvas';
-
-
-// function Model(props) {
-//   const { nodes, materials } = useGLTF('/scene.gltf')
-//   return (
-//     <group {...props} dispose={null} scale = {2.1} position={[0, 1.5, 0]}>
-//       <group rotation={[-Math.PI / 2, 0, 0]}>
-//         <group rotation={[Math.PI / 2, -0.82, 0]}>
-//           <mesh geometry={nodes.defaultMaterial.geometry} material={materials.Part2} />
-//           <mesh geometry={nodes.defaultMaterial_1.geometry} material={materials.Part1} />
-//         </group>
-//       </group>
-     
-//     </group>
-//   )
-// }
 
 // Memoized Model component
 const Model = memo((props) => {
@@ -198,8 +160,7 @@ function App() {
     }
 
     const concealmentSumbit =  (event) => {
-      //  alert('A name was submitted: ' + event.state.value);
-    
+  
       event.preventDefault();
 
       // remove all spaces from sentence
@@ -289,74 +250,6 @@ function App() {
 
       <h1 className = "trueheader">Cipher Machine</h1>
 
-      {/* beginning of old code */}
-      {/* <h1>Backend Data</h1>
-   {typeof backendData.users !== 'undefined' ? backendData.users.map(user => <div key={user}>{user}</div>) : null} */}
-
-
-
-
-    {/* Make a hard coded post request on the press of a button that sends the sentences RPTHPG */}
-    {/* <button onClick = {logData()}> Send RPTHPG to the backend</button>
-
-    <form onSubmit={handleFormSubmit} method = "POST">
-        <label>
-          Name:
-          <input type="text" value={sentence} onChange={handleChange} />
-        </label>
-        <input type="submit"/>
-      </form> */}
-    
-    {/* <h1> {cipheredSentence}</h1> */}
-
-    {/* end of old code */}
-    
-    {/* // create cube canvas */}
-
-    {/* // individual scenes that are not needed
-    <CubeCanvas/>
-    <BitcoinLogo/>
-    <MyScene/> */}
-    {/* <ComputerModel/> */}
-    
-    {/* <Canvas>
-        <ambientLight intensity={0.5} />
-        <ComputerModel />
-      </Canvas> */}
-
-
-    {/* <ComputerModel/> */}
-    {/* <Canvas>
-      <ambientLight intensity={0.5} />
-      <pointLight position={[10, 10, 10]} />
-      <SketchfabModel />
-      <OrbitControls />
-    </Canvas> */}
-
-    {/* <Canvas><ambientLight/> <spotLight intensity={0.9} angle = {0.1}  penumbra = {1}  position = {[10,15,20]} castShadow /> <Model/> <OrbitControls enablePan ={true} enableRotate = {true} enableZoom = {true}/></Canvas> */}
-
-    {/* <div className="flex-container">
-  <div className="left-section">
-    <div className="button-container">
-
-      <button className="circle-button"onClick= {mainButtons.bind(null, 1)}>Start</button>
-      <button className="circle-button" onClick = {mainButtons.bind(null, 10)}>About</button>
-      <button className="circle-button">Credits</button>
-    </div>
-  </div>
-  <div class="right-section">
-  {/* <Canvas><ambientLight/> <spotLight intensity={0.9} angle = {0.9}  penumbra = {1}  position = {[10,115,20]} castShadow /> <Model/> 
-  <OrbitControls enablePan ={true} enableRotate = {true} enableZoom = {true}/>
-  
-  </Canvas> */}
-
-   
-  {/* </div>  */}
- 
-{/* </div> */}
-{/* <Canvas><ambientLight/> <spotLight intensity={0.9} angle = {0.1}  penumbra = {1}  position = {[10,15,20]} castShadow /> <Model2/> <OrbitControls enablePan ={true} enableRotate = {true} enableZoom = {true}/></Canvas> */}
-
-
     
 
 <div style={{ display: 'flex' }}>
@@ -379,23 +272,9 @@ function App() {
 
 if(toggler == 1){
   return( 
-    // writing comments 
-    // tgpuign typing typijng tgyiongpin gdfjklgkljfs  ght re ydfusdfbn
-    // tgyping typing typing typing t ypiung typing typing typing typing typing typing tgyping ty[ping typing typing typing typing tyuping typing typing typing typiung tyu
-    <div>
+      <div>
        <h1 className = "trueheader">Cipher Machine</h1>
-     {/* <div className="left-section">
-    <div className="button-container">
-
-      <button className="circle-button"onClick= {mainButtons.bind(null, 2)}>Classical Ciphers</button>
-      <button className="circle-button" onClick= {mainButtons.bind(null, 6)}>View</button>
-      <button className="circle-button" onClick= {mainButtons.bind(null, 7)}>Create</button>
-      
-    </div>
-  </div>
-  <div>SOMETHING</div>
-  <button onClick= {mainButtons.bind(null, 0)}>Back</button> */}
-  {/* // make back button seperate component */}
+    
   <div style={{ display: 'flex' }}>
   <ThreeButtons toggler={toggler} setToggler={setToggler} buttons={buttonData2} />
   <div class="right-section">
@@ -413,15 +292,7 @@ if(toggler == 2){
   return(
     <div>
       
-     {/* <div className="left-section">
-    <div className="button-container">
-
-      <button className="circle-button"onClick= {mainButtons.bind(null, 3)}>Caesar Cipher</button>
-      <button className="circle-button" onClick = {mainButtons.bind(null, 4)}>Cipher 2</button>
-      <button className="circle-button">Cipher 3</button>
-    </div>
-  </div>
-  <button onClick= {mainButtons.bind(null, 1)}>Back</button> */}
+  
    <h1 className = "trueheader">Cipher Machine</h1>
   <div style={{ display: 'flex' }}>
   <ThreeButtons toggler={toggler} setToggler={setToggler} buttons={buttonData3} />
@@ -473,8 +344,7 @@ if(toggler == 6){
    <DatabaseSubmitter/>
    <div class="right-section">
   <Canvas style = {{marginTop: '6rem', marginleft: '3rem'}}><ambientLight/> <spotLight intensity={0.9} angle = {0.9}  penumbra = {1}  position = {[10,115,20]} castShadow /> <Model/> <OrbitControls enablePan ={true} enableRotate = {true} enableZoom = {true}/></Canvas>
-   {/* <h1>PLEASE WORK</h1>
-   <h1> Making </h1> */}
+  
    </div>
    </div>
    <button  onClick= {mainButtons.bind(null, 1)}>Back</button>
@@ -489,8 +359,7 @@ if(toggler == 7){
    <DatabaseRetriever/>
    <div class="right-section">
   <Canvas style = {{marginTop: '6rem', marginleft: '3rem'}}><ambientLight/> <spotLight intensity={0.9} angle = {0.9}  penumbra = {1}  position = {[10,115,20]} castShadow /> <Model/> <OrbitControls enablePan ={true} enableRotate = {true} enableZoom = {true}/></Canvas>
-   {/* <h1>PLEASE WORK</h1>
-   <h1> Making </h1> */}
+ 
    </div>
   
    </div>
@@ -528,32 +397,6 @@ if(toggler == 4){
         <p >Your text paragraph goes here...</p>
       </div>
     </div>
-   
-    {/* <form onSubmit={concealmentSumbit} method = "POST">
-        <label>
-          Enter your cipher name:
-          <input type="text" value={sentence} onChange={handleChange} />
-        </label>
-        <input type="submit"/>
-      </form>
-  <div> {displayedSentence}</div> */}
-  {/* <button onClick= {() => {mainButtons(2); setDisplayedSentence(""); setSentence("")}}>Back</button> */}
-    {/* <button>PRESSED</button>
-  <div className="flex-container">
-  <div className="left-section">
-    <ThreeButtons toggler={toggler} setToggler={setToggler} buttons={buttonData1} />
-  </div>
-  
-  </div> */}
-    
-      {/* <CipherForm
-        backendPath='/api/submitcaesar'
-        buttonText="Submit"
-        sentenceState={sentence}
-        setSentence={setSentence}
-      />
-      <div>{displayedSentence}</div>
-      <button onClick= {mainButtons.bind(null, 2)}>Back</button> */}
 
     
   </div>
@@ -599,18 +442,7 @@ if(toggler === 5){
       return(
         <div>
          <h1 className = "trueheader">Cipher Machine</h1>
-     {/* <div className="left-section">
-    <div className="button-container">
-
-      <button className="circle-button"onClick= {mainButtons.bind(null, 2)}>Classical Ciphers</button>
-      <button className="circle-button" onClick= {mainButtons.bind(null, 6)}>View</button>
-      <button className="circle-button" onClick= {mainButtons.bind(null, 7)}>Create</button>
-      
-    </div>
-  </div>
-  <div>SOMETHING</div>
-  <button onClick= {mainButtons.bind(null, 0)}>Back</button> */}
-  {/* // make back button seperate component */}
+  
   <div style={{ display: 'flex' }}>
     
   <p className= "lefthandtext">
@@ -623,8 +455,7 @@ if(toggler === 5){
 
   <div class="right-section">
   <Canvas><ambientLight/> <spotLight intensity={0.9} angle = {0.9}  penumbra = {1}  position = {[10,115,20]} castShadow /> <Model/> <OrbitControls enablePan ={true} enableRotate = {true} enableZoom = {true}/></Canvas>
-   {/* <h1>PLEASE WORK</h1>
-   <h1> Making </h1> */}
+
    </div>
           </div>
           <button  onClick= {mainButtons.bind(null, 0)}>Back</button>
@@ -638,18 +469,7 @@ if(toggler === 5){
     return(
       <div>
        <h1 className = "trueheader">Cipher Machine</h1>
-   {/* <div className="left-section">
-  <div className="button-container">
-
-    <button className="circle-button"onClick= {mainButtons.bind(null, 2)}>Classical Ciphers</button>
-    <button className="circle-button" onClick= {mainButtons.bind(null, 6)}>View</button>
-    <button className="circle-button" onClick= {mainButtons.bind(null, 7)}>Create</button>
-    
-  </div>
-</div>
-<div>SOMETHING</div>
-<button onClick= {mainButtons.bind(null, 0)}>Back</button> */}
-{/* // make back button seperate component */}
+   
 <div style={{ display: 'flex' }}>
   
 <p className= "lefthandtext">
@@ -687,8 +507,7 @@ https://en.wikipedia.org/wiki/File:Union_Forces_35_Star_Flag.gif
 
 <div class="right-section">
 <Canvas><ambientLight/> <spotLight intensity={0.9} angle = {0.9}  penumbra = {1}  position = {[10,115,20]} castShadow /> <Model/> <OrbitControls enablePan ={true} enableRotate = {true} enableZoom = {true}/></Canvas>
- {/* <h1>PLEASE WORK</h1>
- <h1> Making </h1> */}
+
  </div>
         </div>
         <button  onClick= {mainButtons.bind(null, 0)}>Back</button>

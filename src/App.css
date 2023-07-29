@@ -35,8 +35,8 @@ body {
 }
 
 .circle-button {
-  width: 270px; /* Increase button width */
-  height: 120px; /* Increase button height */
+  width: 270px; 
+  height: 120px;
   border-radius: 50%;
   background-color: black;
   margin-bottom: 60px;
@@ -143,18 +143,18 @@ body {
 /* next part of code is for the insert into database */
 
 .inputdata {
-  width: 18.75rem; /* Equivalent to 300px in rem (300px / 16px = 18.75rem) */
-  height: 2.5rem; /* Equivalent to 40px in rem (40px / 16px = 2.5rem) */
-  font-size: 1rem; /* Equivalent to 16px */
-  padding: 0.5rem; /* Equivalent to 8px in rem (8px / 16px = 0.5rem) */
-  margin-bottom: 1.25rem; /* Equivalent to 20px in rem (20px / 16px = 1.25rem) */
-  margin-top: 13rem; /* Equivalent to 20px in rem (20px / 16px = 1.25rem) */
+  width: 18.75rem; 
+  height: 2.5rem; 
+  font-size: 1rem; 
+  padding: 0.5rem; 
+  margin-bottom: 1.25rem; 
+  margin-top: 13rem; 
 }
 
 .submitdata {
-  width: 9.375rem; /* Equivalent to 150px in rem (150px / 16px = 9.375rem) */
-  height: 2.5rem; /* Equivalent to 40px in rem (40px / 16px = 2.5rem) */
-  font-size: 1rem; /* Equivalent to 16px */
+  width: 9.375rem; 
+  height: 2.5rem; 
+  font-size: 1rem; 
   justify-content: center;
   background-color: orange;
   color: white;
@@ -166,19 +166,19 @@ body {
 /* previous was for the first two insert (name and rules)*/
 
 .inputarraydata{
-  width: 18.75rem; /* Equivalent to 300px in rem (300px / 16px = 18.75rem) */
-  height: 2.5rem; /* Equivalent to 40px in rem (40px / 16px = 2.5rem) */
-  font-size: 1rem; /* Equivalent to 16px */
-  padding: 0.5rem; /* Equivalent to 8px in rem (8px / 16px = 0.5rem) */
+  width: 18.75rem; 
+  height: 2.5rem; 
+  font-size: 1rem; 
+  padding: 0.5rem; 
   margin-top: 13rem;
   margin-bottom: 1.25rem;
   margin-left: 8rem;
 }
 
 .inputsubmitdata{
-  width: 9.375rem; /* Equivalent to 150px in rem (150px / 16px = 9.375rem) */
-  height: 2.5rem; /* Equivalent to 40px in rem (40px / 16px = 2.5rem) */
-  font-size: 1rem; /* Equivalent to 16px  #007bff*/
+  width: 9.375rem; 
+  height: 2.5rem; 
+  font-size: 1rem; 
   justify-content: center;
   background-color: #ea9e06;
   color: white;
@@ -192,11 +192,11 @@ body {
 /* next part is for entering the answers and solutions*/
 
 .keyinput{
-  width: 18.75rem; /* Equivalent to 300px in rem (300px / 16px = 18.75rem) */
-  height: 2.5rem; /* Equivalent to 40px in rem (40px / 16px = 2.5rem) */
-  font-size: 1rem; /* Equivalent to 16px */
-  padding: 0.5rem; /* Equivalent to 8px in rem (8px / 16px = 0.5rem) */
-  margin-bottom: 1.25rem; /* Equivalent to 20px in rem (20px / 16px = 1.25rem) */
+  width: 18.75rem;
+  height: 2.5rem; 
+  font-size: 1rem;
+  padding: 0.5rem; 
+  margin-bottom: 1.25rem; 
   margin-top: 1.1rem;
 }
 
