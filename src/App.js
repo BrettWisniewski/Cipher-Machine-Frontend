@@ -2,20 +2,28 @@
 // want to import cube canvas here 
 // threedimensional2011
 // "Enigma Machine" (https://skfb.ly/oBwzU) by ASHISH is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
-import React, { useEffect, useState, useRef } from 'react';
-import * as THREE from 'three';
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
- import CubeCanvas from './CubeCanvas'
- import MyScene from './MyScene';
-  import BitcoinLogo from './BitLogo';
-import SketchfabModel from './SketchfabModel';
+import React, { useEffect, useState, memo} from 'react';
+ import * as THREE from 'three';
+// import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+//  import CubeCanvas from './CubeCanvas'
+//  import MyScene from './MyScene';
+//   import BitcoinLogo from './BitLogo';
+// import SketchfabModel from './SketchfabModel';
 import { Canvas } from '@react-three/fiber';  
 import { OrbitControls, useGLTF } from '@react-three/drei';
-import GLTFLoaderComponent from './GLTFLoaderComponent';
+// import GLTFLoaderComponent from './GLTFLoaderComponent';
 
-import ComputerModel from './ComputerModel';
+// import ComputerModel from './ComputerModel';
 // import css file
 import './App.css'
+
+import DatabaseSubmitter from './DatabaseSubmitter';
+
+import DatabaseRetriever from './DatabaseRetriever';
+
+import ThreeButtons from './ThreeButtons';
+
+import CipherForm from './CipherForm';
 
 
 
@@ -26,118 +34,54 @@ import './App.css'
 // import { GLTFLoader } from 'gltf-loader-three';
 // import JSZip from 'jszip';
 // import CubeCanvas from './CubeCanvas';
-function Model(props) {
-  const { nodes, materials } = useGLTF('/scene.gltf')
+
+
+// function Model(props) {
+//   const { nodes, materials } = useGLTF('/scene.gltf')
+//   return (
+//     <group {...props} dispose={null} scale = {2.1} position={[0, 1.5, 0]}>
+//       <group rotation={[-Math.PI / 2, 0, 0]}>
+//         <group rotation={[Math.PI / 2, -0.82, 0]}>
+//           <mesh geometry={nodes.defaultMaterial.geometry} material={materials.Part2} />
+//           <mesh geometry={nodes.defaultMaterial_1.geometry} material={materials.Part1} />
+//         </group>
+//       </group>
+     
+//     </group>
+//   )
+// }
+
+// Memoized Model component
+const Model = memo((props) => {
+  const { nodes, materials } = useGLTF('/scene.gltf');
   return (
-    <group {...props} dispose={null} scale = {2.1} position={[0, 1.5, 0]}>
+    <group {...props} dispose={null} scale={2.1} position={[0, 1.5, 0]}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
-        <group rotation={[Math.PI / 2, -0.82, 0]}>
+        <group rotation={[Math.PI / 2, -0.72, 0]}>
           <mesh geometry={nodes.defaultMaterial.geometry} material={materials.Part2} />
           <mesh geometry={nodes.defaultMaterial_1.geometry} material={materials.Part1} />
         </group>
       </group>
-     
     </group>
-  )
-}
+  );
+});
 
-// function Model2(props) {
-//   const { nodes, materials } = useGLTF('/emachine.gltf')
-//   return (
-//     <group {...props} dispose={null}>
-//       <group rotation={[1.576, 0, 0]}>
-//         <group rotation={[-Math.PI, 0, 0]} scale={0.01}>
-//           <mesh geometry={nodes.part001_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[6.298, 0, 9.668]} scale={100} />
-//           <mesh geometry={nodes.part004_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[-8.352, 0, 8.84]} scale={100} />
-//           <mesh geometry={nodes.part005_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[6.73, 0, 11.292]} scale={100} />
-//           <mesh geometry={nodes.part006_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[-8.493, 0.005, 10.407]} scale={100} />
-//           <mesh geometry={nodes.part008_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[-13.307, 0, 5.496]} scale={100} />
-//           <mesh geometry={nodes.part009_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[9.837, 1.92, 12.457]} scale={100} />
-//           <mesh geometry={nodes.part010_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[0.875, -0.313, 12.18]} scale={100} />
-//           <mesh geometry={nodes.part011_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[8.523, -0.169, 12.631]} scale={100} />
-//           <mesh geometry={nodes.part012_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[-10.421, -9.889, 9.404]} scale={100} />
-//           <mesh geometry={nodes.part013_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[-4.977, -10.442, 10.279]} scale={100} />
-//           <mesh geometry={nodes.part014_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[-7.742, -9.049, 9.863]} scale={100} />
-//           <mesh geometry={nodes.part015_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[14.77, 1.92, 12.595]} scale={100} />
-//           <mesh geometry={nodes.part016_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[8.524, 2.72, 12.247]} scale={100} />
-//           <mesh geometry={nodes.part017_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[14.144, 1.923, 12.773]} scale={100} />
-//           <mesh geometry={nodes.part018_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[-1.212, 0, 12.802]} scale={100} />
-//           <mesh geometry={nodes.part020_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[-13.622, 0, 5.815]} scale={100} />
-//           <mesh geometry={nodes.part021_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[14.144, 1.923, 12.773]} scale={100} />
-//           <mesh geometry={nodes.part022_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[14.144, 1.923, 12.773]} scale={100} />
-//           <mesh geometry={nodes.part029_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[1.622, 0, 12.699]} scale={100} />
-//           <mesh geometry={nodes.part030_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[1.622, 0, 13.143]} scale={100} />
-//           <mesh geometry={nodes.part031_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[1.622, -11.747, 12.719]} scale={100} />
-//           <mesh geometry={nodes.part032_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[5.14, 1.919, 12.687]} scale={100} />
-//           <mesh geometry={nodes.part033_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[6.026, 1.919, 13.122]} scale={100} />
-//           <mesh geometry={nodes.part034_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[5.606, -3.199, 12.69]} scale={100} />
-//           <mesh geometry={nodes.part045_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[6.39, -6.976, 12.418]} scale={100} />
-//           <mesh geometry={nodes.part046_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[5.206, 0, 12.61]} scale={100} />
-//           <mesh geometry={nodes.part047_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[5.206, 0, 13.109]} scale={100} />
-//           <mesh geometry={nodes.part048_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[6.454, 0, 13.68]} scale={100} />
-//           <mesh geometry={nodes.part049_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[6.543, -11.937, 13.751]} scale={100} />
-//           <mesh geometry={nodes.part050_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[7.705, -0.001, 12.61]} scale={100} />
-//           <mesh geometry={nodes.part051_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[7.705, -11.977, 12.738]} scale={100} />
-//           <mesh geometry={nodes.part052_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[6.39, -6.976, 12.451]} scale={100} />
-//           <mesh geometry={nodes.part053_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[6.39, -6.976, 13.265]} scale={100} />
-//           <mesh geometry={nodes.part054_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[-14.3, 0.014, 5.677]} scale={100} />
-//           <mesh geometry={nodes.part060_low_w2_low_mec_0.geometry} material={materials.w2_low_mec} position={[-14.626, -8.055, 4.815]} scale={100} />
-//           <mesh geometry={nodes.part067_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[-12.253, 0, 10.144]} scale={100} />
-//           <mesh geometry={nodes.part072_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[13.734, 1.678, 12.725]} scale={100} />
-//           <mesh geometry={nodes.part073_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[14.588, 2.086, 12.725]} scale={100} />
-//           <mesh geometry={nodes.part074_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[8.525, 2.787, 12.689]} scale={100} />
-//           <mesh geometry={nodes.part075_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[-12.253, 0, 10.258]} scale={100} />
-//           <mesh geometry={nodes.part076_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[-13.446, -12.852, 5.668]} scale={100} />
-//           <mesh geometry={nodes.part086_low_low_mec002_0.geometry} material={materials['low_mec.002']} position={[-13.27, -5.385, 3.349]} scale={100} />
-//           <mesh geometry={nodes.part078_low_low_box001_0.geometry} material={materials['low_box.001']} position={[17.5, 0, 9.694]} scale={100} />
-//           <mesh geometry={nodes.part077_low_low_box001_0.geometry} material={materials['low_box.001']} position={[17.5, 0, 9.694]} scale={100} />
-//           <mesh geometry={nodes.part035_low_low_box001_0.geometry} material={materials['low_box.001']} position={[22.823, 0, 43.453]} scale={100} />
-//           <mesh geometry={nodes.part003_low_low_box001_0.geometry} material={materials['low_box.001']} position={[17.219, 0, 44.249]} scale={100} />
-//           <mesh geometry={nodes.part037_low_low_box001_0.geometry} material={materials['low_box.001']} position={[21.972, 0, 33.663]} scale={100} />
-//           <mesh geometry={nodes.part038_low_low_box001_0.geometry} material={materials['low_box.001']} position={[22.576, 0, 33.663]} scale={100} />
-//           <mesh geometry={nodes.part036_low_low_box001_0.geometry} material={materials['low_box.001']} position={[22.536, 0, 33.663]} scale={100} />
-//           <mesh geometry={nodes.part023_low_low_box001_0.geometry} material={materials['low_box.001']} position={[22.132, 0.001, 15.069]} scale={100} />
-//           <mesh geometry={nodes.part056_low_w1_low_box_0.geometry} material={materials.w1_low_box} position={[22.133, -9.685, 14.308]} scale={100} />
-//           <mesh geometry={nodes.part044_low_low_box001_0.geometry} material={materials['low_box.001']} position={[22.604, 0, 14.835]} scale={100} />
-//           <mesh geometry={nodes.part040_low_low_box001_0.geometry} material={materials['low_box.001']} position={[22.132, 0, 15.152]} scale={100} />
-//           <mesh geometry={nodes.part039_low_low_box001_0.geometry} material={materials['low_box.001']} position={[22.132, 0, 15.152]} scale={100} />
-//           <mesh geometry={nodes.part041_low_low_box001_0.geometry} material={materials['low_box.001']} position={[22.132, 0, 15.072]} scale={100} />
-//           <mesh geometry={nodes.part042_low_low_box001_0.geometry} material={materials['low_box.001']} position={[22.132, 0, 15.074]} scale={100} />
-//           <mesh geometry={nodes.part043_low_low_box001_0.geometry} material={materials['low_box.001']} position={[22.132, 0, 15.074]} scale={100} />
-//           <mesh geometry={nodes.part079_low_low_box001_0.geometry} material={materials['low_box.001']} position={[17.5, 0, 9.694]} scale={100} />
-//           <mesh geometry={nodes.part080_low_low_box001_0.geometry} material={materials['low_box.001']} position={[17.5, 0, 9.694]} scale={100} />
-//           <mesh geometry={nodes.part081_low_low_box001_0.geometry} material={materials['low_box.001']} position={[17.5, 0, 9.694]} scale={100} />
-//           <mesh geometry={nodes.part007_low_low_box001_0.geometry} material={materials['low_box.001']} position={[18.616, -0.014, 6.627]} scale={100} />
-//           <mesh geometry={nodes.part002_low_low_box001_0.geometry} material={materials['low_box.001']} position={[17.77, 0, 6.627]} scale={100} />
-//           <mesh geometry={nodes.part019_low_low_box001_0.geometry} material={materials['low_box.001']} position={[17.5, 0, 9.694]} scale={100} />
-//           <mesh geometry={nodes.part069_low_low_box001_0.geometry} material={materials['low_box.001']} position={[15.645, 0, 15.855]} scale={100} />
-//           <mesh geometry={nodes.part071_low_low_box001_0.geometry} material={materials['low_box.001']} position={[13.093, 0, 13.795]} scale={100} />
-//           <mesh geometry={nodes.part070_low_low_box001_0.geometry} material={materials['low_box.001']} position={[11.422, 0, 11.45]} scale={100} />
-//           <mesh geometry={nodes.part082_low_low_box001_0.geometry} material={materials['low_box.001']} position={[17.5, 0, 9.694]} scale={100} />
-//           <mesh geometry={nodes.part024_low_low_box001_0.geometry} material={materials['low_box.001']} position={[-16.821, 0.566, -8.073]} rotation={[Math.PI, 0, Math.PI]} scale={100} />
-//           <mesh geometry={nodes.part084_low_low_box001_0.geometry} material={materials['low_box.001']} position={[-17.214, -1.048, -8.073]} rotation={[Math.PI, 0, Math.PI]} scale={100} />
-//           <mesh geometry={nodes.part083_low_low_box001_0.geometry} material={materials['low_box.001']} position={[-17.137, 0, -0.008]} rotation={[Math.PI, 0, Math.PI]} scale={100} />
-//           <mesh geometry={nodes.part085_low_low_box001_0.geometry} material={materials['low_box.001']} scale={100} />
-//           <mesh geometry={nodes.part028_low_low_box001_0.geometry} material={materials['low_box.001']} position={[-17.137, 0, -0.008]} rotation={[Math.PI, 0, Math.PI]} scale={100} />
-//           <mesh geometry={nodes.part025_low_low_box001_0.geometry} material={materials['low_box.001']} position={[-17.137, 0, -0.008]} rotation={[Math.PI, 0, Math.PI]} scale={100} />
-//           <mesh geometry={nodes.part027_low_low_box001_0.geometry} material={materials['low_box.001']} position={[-17.137, 0, -0.008]} scale={100} />
-//           <mesh geometry={nodes.part068_low_low_box001_0.geometry} material={materials['low_box.001']} position={[-14.829, 0, 8.873]} scale={100} />
-//           <mesh geometry={nodes.part_low_low_box001_0.geometry} material={materials['low_box.001']} position={[-18.22, 0, -8.754]} rotation={[Math.PI, 0, Math.PI]} scale={100} />
-//           <mesh geometry={nodes.part066_low_low_box001_0.geometry} material={materials['low_box.001']} position={[-15.459, 0, 6.71]} scale={100} />
-//           <mesh geometry={nodes.part026_low_low_box001_0.geometry} material={materials['low_box.001']} position={[-18.645, 0, -6.726]} rotation={[Math.PI, 0, Math.PI]} scale={100} />
-//           <mesh geometry={nodes.part087_low_glass_0.geometry} material={materials.glass} position={[8.545, 2.715, 12.578]} scale={100} />
-//         </group>
-//       </group>
-//     </group>
-//   )
-// }
 
 
 function App() {
   // add a state to determine cipher requests
   const [backendData, setBackendData] = useState([{}])
   const [cipheredSentence, setCipheredSentence] = useState("")
+
+  // this one will be used for changing the cipher sentences
   const [sentence, setSentence] = useState("")
+
+  // new state components
+  const [toggler, setToggler] = useState(0)
+  const [displayedSentence, setDisplayedSentence] = useState("")
+
+ 
+  
   
 
   useEffect(() => {
@@ -225,17 +169,135 @@ function App() {
   }
 
   // create cube canvas
-
-
+  const mainButtons =  (value) => {
+    setToggler(value);
+  };
+  const caesarSumbit =  (event) => {
+    //  alert('A name was submitted: ' + event.state.value);
   
+    event.preventDefault();
+  
+    // Send the form data to the Express backend
+    fetch('/api/submitcaesar', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ sentence: sentence })
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Handle the response from the backend if needed
+        setDisplayedSentence(data.sentence);
+      })
+      // .catch((error) => {
+      //   console.error('Error:', error);
+      // });
+  
+  
+    }
+
+    const concealmentSumbit =  (event) => {
+      //  alert('A name was submitted: ' + event.state.value);
+    
+      event.preventDefault();
+
+      // remove all spaces from sentence
+      const sentenceNoSpaces = sentence.replace(/\s/g, '');
+    
+      // Send the form data to the Express backend
+      fetch('/api/submitconcealment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ sentence: sentenceNoSpaces })
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          // Handle the response from the backend if needed
+          setDisplayedSentence(data.sentence);
+        })
+        // .catch((error) => {
+        //   console.error('Error:', error);
+        // });
+    
+    
+      }
+
+      const transpotionSumbit =  (event) => {
+        //  alert('A name was submitted: ' + event.state.value);
+      
+        event.preventDefault();
+  
+        // remove all spaces from sentence
+        const sentenceNoSpaces = sentence.replace(/\s/g, '');
+
+        console.log("OKAY")
+      
+        // Send the form data to the Express backend
+
+        
+          
+        fetch('/api/submittransposition', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ sentence: sentenceNoSpaces })
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            // Handle the response from the backend if needed
+            setDisplayedSentence(data.sentence);
+          })
+          // .catch((error) => {
+          //   console.error('Error:', error);
+          // });
+      
+      
+        
+      }
+
+
+
+    const buttonData1 = [
+      { name: 'Start', value: 1 },
+      { name: 'About', value: 8 },
+      { name: 'Credits', value: 9 }
+    ];
+
+    const buttonData2 = [
+      { name: 'Classical Ciphers', value: 2 },
+      { name: 'Create', value: 6 },
+      { name: 'Interact', value: 7 }
+    ];
+
+
+    const buttonData3 = [
+      { name: 'Substitution Cipher', value: 3 },
+      { name: 'Null Cipher', value: 4 },
+      { name: 'Transpostion Cipher', value: 5 }
+    ];
+
+   
+
+
+  if (toggler == 0){
   return (
     <div>
-      <h1>Backend Data</h1>
-   {typeof backendData.users !== 'undefined' ? backendData.users.map(user => <div key={user}>{user}</div>) : null}
+
+      <h1 className = "trueheader">Cipher Machine</h1>
+
+      {/* beginning of old code */}
+      {/* <h1>Backend Data</h1>
+   {typeof backendData.users !== 'undefined' ? backendData.users.map(user => <div key={user}>{user}</div>) : null} */}
+
+
 
 
     {/* Make a hard coded post request on the press of a button that sends the sentences RPTHPG */}
-    <button onClick = {logData()}> Send RPTHPG to the backend</button>
+    {/* <button onClick = {logData()}> Send RPTHPG to the backend</button>
 
     <form onSubmit={handleFormSubmit} method = "POST">
         <label>
@@ -243,9 +305,12 @@ function App() {
           <input type="text" value={sentence} onChange={handleChange} />
         </label>
         <input type="submit"/>
-      </form>
+      </form> */}
     
-    <h1> {cipheredSentence}</h1>
+    {/* <h1> {cipheredSentence}</h1> */}
+
+    {/* end of old code */}
+    
     {/* // create cube canvas */}
 
     {/* // individual scenes that are not needed
@@ -270,30 +335,370 @@ function App() {
 
     {/* <Canvas><ambientLight/> <spotLight intensity={0.9} angle = {0.1}  penumbra = {1}  position = {[10,15,20]} castShadow /> <Model/> <OrbitControls enablePan ={true} enableRotate = {true} enableZoom = {true}/></Canvas> */}
 
-    <div className="flex-container">
+    {/* <div className="flex-container">
   <div className="left-section">
     <div className="button-container">
-      <button className="circle-button">Start</button>
-      <button className="circle-button">About</button>
+
+      <button className="circle-button"onClick= {mainButtons.bind(null, 1)}>Start</button>
+      <button className="circle-button" onClick = {mainButtons.bind(null, 10)}>About</button>
       <button className="circle-button">Credits</button>
     </div>
   </div>
   <div class="right-section">
-  <Canvas><ambientLight/> <spotLight intensity={0.9} angle = {0.9}  penumbra = {1}  position = {[10,115,20]} castShadow /> <Model/> <OrbitControls enablePan ={true} enableRotate = {true} enableZoom = {true}/></Canvas>
-   {/* <h1>PLEASE WORK</h1>
-   <h1> Making </h1> */}
-  </div>
-</div>
+  {/* <Canvas><ambientLight/> <spotLight intensity={0.9} angle = {0.9}  penumbra = {1}  position = {[10,115,20]} castShadow /> <Model/> 
+  <OrbitControls enablePan ={true} enableRotate = {true} enableZoom = {true}/>
+  
+  </Canvas> */}
+
+   
+  {/* </div>  */}
+ 
+{/* </div> */}
 {/* <Canvas><ambientLight/> <spotLight intensity={0.9} angle = {0.1}  penumbra = {1}  position = {[10,15,20]} castShadow /> <Model2/> <OrbitControls enablePan ={true} enableRotate = {true} enableZoom = {true}/></Canvas> */}
 
 
     
 
+<div style={{ display: 'flex' }}>
+<ThreeButtons toggler={toggler} setToggler={setToggler} buttons={buttonData1} />
+<div class="right-section">
+  <Canvas><ambientLight/> <spotLight intensity={0.9} angle = {0.9}  penumbra = {1}  position = {[10,115,20]} castShadow /> <Model/> <OrbitControls enablePan ={true} enableRotate = {true} enableZoom = {true}/></Canvas>
+   {/* <h1>PLEASE WORK</h1>
+   <h1> Making </h1> */}
+  </div>
   
 
+
     </div>
+    </div>
+    
 
   )
+}
+
+
+if(toggler == 1){
+  return( 
+    // writing comments 
+    // tgpuign typing typijng tgyiongpin gdfjklgkljfs  ght re ydfusdfbn
+    // tgyping typing typing typing t ypiung typing typing typing typing typing typing tgyping ty[ping typing typing typing typing tyuping typing typing typing typiung tyu
+    <div>
+       <h1 className = "trueheader">Cipher Machine</h1>
+     {/* <div className="left-section">
+    <div className="button-container">
+
+      <button className="circle-button"onClick= {mainButtons.bind(null, 2)}>Classical Ciphers</button>
+      <button className="circle-button" onClick= {mainButtons.bind(null, 6)}>View</button>
+      <button className="circle-button" onClick= {mainButtons.bind(null, 7)}>Create</button>
+      
+    </div>
+  </div>
+  <div>SOMETHING</div>
+  <button onClick= {mainButtons.bind(null, 0)}>Back</button> */}
+  {/* // make back button seperate component */}
+  <div style={{ display: 'flex' }}>
+  <ThreeButtons toggler={toggler} setToggler={setToggler} buttons={buttonData2} />
+  <div class="right-section">
+  <Canvas><ambientLight/> <spotLight intensity={0.9} angle = {0.9}  penumbra = {1}  position = {[10,115,20]} castShadow /> <Model/> <OrbitControls enablePan ={true} enableRotate = {true} enableZoom = {true}/></Canvas>
+   {/* <h1>PLEASE WORK</h1>
+   <h1> Making </h1> */}
+   </div>
+  </div>
+  <button  onClick= {mainButtons.bind(null, 0)}>Back</button>
+</div>
+    
+  )
+}
+if(toggler == 2){
+  return(
+    <div>
+      
+     {/* <div className="left-section">
+    <div className="button-container">
+
+      <button className="circle-button"onClick= {mainButtons.bind(null, 3)}>Caesar Cipher</button>
+      <button className="circle-button" onClick = {mainButtons.bind(null, 4)}>Cipher 2</button>
+      <button className="circle-button">Cipher 3</button>
+    </div>
+  </div>
+  <button onClick= {mainButtons.bind(null, 1)}>Back</button> */}
+   <h1 className = "trueheader">Cipher Machine</h1>
+  <div style={{ display: 'flex' }}>
+  <ThreeButtons toggler={toggler} setToggler={setToggler} buttons={buttonData3} />
+  <div class="right-section">
+  <Canvas><ambientLight/> <spotLight intensity={0.9} angle = {0.9}  penumbra = {1}  position = {[10,115,20]} castShadow /> <Model/> <OrbitControls enablePan ={true} enableRotate = {true} enableZoom = {true}/></Canvas>
+   {/* <h1>PLEASE WORK</h1>
+   <h1> Making </h1> */}
+   </div>
+  </div>
+  <button  onClick= {mainButtons.bind(null, 1)}>Back</button>
+</div>
+    
+  )
+}
+
+if(toggler == 3){
+  return(
+    <div className = 'cipher-flex-container'>
+      <div className = 'cipher-flex-left'>
+        <h1 className = 'ciphertext'>SUBSTITUTION CIPHER</h1>
+        <p className = 'ciphertext'>A subsitution cipher is when each letter is replaced by another letter. A famous one was
+          used by Julius Caesar in which each letter was replaced by the letter 3 letters after it. 
+          Try it out below!
+        </p>
+        <form onSubmit={caesarSumbit} method="POST">
+          <h3 className = "ciphertext" >Enter your cipher name</h3>
+          <label>
+            Enter your cipher name:
+            <input type="text" value={sentence} onChange={handleChange} className = "cipherinput" />
+          </label>
+         
+          <input type="submit" className = "ciphersubmit" />
+        </form>
+        <h1 className = "displayedcipher">{displayedSentence}</h1>
+        <button onClick={() => {mainButtons(2); setDisplayedSentence(""); setSentence("")}}>Back</button>
+      </div>
+      <div className = "cipheright">
+        <img className = "cipherimage" src="images/julius-caesar-bust-3d-2.png" alt="Image failed to load" />
+        <p >Your text paragraph goes here...</p>
+      </div>
+    </div>
+    
+  )
+}
+if(toggler == 6){
+  return(
+    <div>
+    <div style = {{display: 'flex'}}>
+   <DatabaseSubmitter/>
+   <div class="right-section">
+  <Canvas style = {{marginTop: '6rem', marginleft: '3rem'}}><ambientLight/> <spotLight intensity={0.9} angle = {0.9}  penumbra = {1}  position = {[10,115,20]} castShadow /> <Model/> <OrbitControls enablePan ={true} enableRotate = {true} enableZoom = {true}/></Canvas>
+   {/* <h1>PLEASE WORK</h1>
+   <h1> Making </h1> */}
+   </div>
+   </div>
+   <button  onClick= {mainButtons.bind(null, 1)}>Back</button>
+   </div>
+    
+  )
+}
+if(toggler == 7){
+  return(
+    <div>
+      <div style = {{display: 'flex'}}>
+   <DatabaseRetriever/>
+   <div class="right-section">
+  <Canvas style = {{marginTop: '6rem', marginleft: '3rem'}}><ambientLight/> <spotLight intensity={0.9} angle = {0.9}  penumbra = {1}  position = {[10,115,20]} castShadow /> <Model/> <OrbitControls enablePan ={true} enableRotate = {true} enableZoom = {true}/></Canvas>
+   {/* <h1>PLEASE WORK</h1>
+   <h1> Making </h1> */}
+   </div>
+  
+   </div>
+
+   <button  onClick= {mainButtons.bind(null, 1)}>Back</button>
+  
+   </div>
+    
+  )
+}
+if(toggler == 4){
+  return(
+  <div>
+    <div className = 'cipher-flex-container'>
+      <div className = 'cipher-flex-left'>
+        <h1 className = 'ciphertext'>NULL CIPHER</h1>
+        <p className = 'ciphertext'>A null cipher is when the letters from the message are mixed with non cipher-letter. A famous one was
+          used during the English Civil War in which each letter from the cipher could be found at the third letter after each punctuation. 
+          Try it out below!
+        </p>
+        <form onSubmit={concealmentSumbit} method="POST">
+          <h3 className = "ciphertext" >Enter your cipher name</h3>
+          <label>
+            Enter your cipher name:
+            <input type="text" value={sentence} onChange={handleChange} className = "cipherinput" />
+          </label>
+         
+          <input type="submit" className = "ciphersubmit" />
+        </form>
+        <h1 className = "displayedcipher">{displayedSentence}</h1>
+        <button onClick={() => {mainButtons(2); setDisplayedSentence(""); setSentence("")}}>Back</button>
+      </div>
+      <div className = "cipheright">
+        <img className = "cipherimage" style = {{maxWidth: '55%'}} src="images/portrait-of-oliver-cromwell-1599-1658-lord-protector-of-england-by-studio-of-rob-md.jpg" alt="Image failed to load" />
+        <p >Your text paragraph goes here...</p>
+      </div>
+    </div>
+   
+    {/* <form onSubmit={concealmentSumbit} method = "POST">
+        <label>
+          Enter your cipher name:
+          <input type="text" value={sentence} onChange={handleChange} />
+        </label>
+        <input type="submit"/>
+      </form>
+  <div> {displayedSentence}</div> */}
+  {/* <button onClick= {() => {mainButtons(2); setDisplayedSentence(""); setSentence("")}}>Back</button> */}
+    {/* <button>PRESSED</button>
+  <div className="flex-container">
+  <div className="left-section">
+    <ThreeButtons toggler={toggler} setToggler={setToggler} buttons={buttonData1} />
+  </div>
+  
+  </div> */}
+    
+      {/* <CipherForm
+        backendPath='/api/submitcaesar'
+        buttonText="Submit"
+        sentenceState={sentence}
+        setSentence={setSentence}
+      />
+      <div>{displayedSentence}</div>
+      <button onClick= {mainButtons.bind(null, 2)}>Back</button> */}
+
+    
+  </div>
+  )
+}
+
+if(toggler === 5){
+
+  return(
+    <div>
+      <div className = 'cipher-flex-container'>
+        <div className = 'cipher-flex-left'>
+          <h1 className = 'ciphertext'>TRANSPOSITION CIPHER</h1>
+          <p className = 'ciphertext'>A transpotion cipher is when the letters from the message are rearanged. A famous variation of this one was
+            used during the USA's Civil War by the Union in which each letter is rearanged so that the letters of each word so that the first letter of each word is the first three letters. This continues down the line.
+            Try it out below!
+          </p>
+          <form onSubmit={transpotionSumbit} method="POST">
+            <h3 className = "ciphertext" >Enter your cipher name</h3>
+            <label>
+              Enter your cipher name:
+              <input type="text" value={sentence} onChange={handleChange} className = "cipherinput" />
+            </label>
+           
+            <input type="submit" className = "ciphersubmit" />
+          </form>
+          <h1 className = "displayedcipher">{displayedSentence}</h1>
+          <button onClick={() => {mainButtons(2); setDisplayedSentence(""); setSentence("")}}>Back</button>
+        </div>
+        <div className = "cipheright">
+          <img className = "cipherimage" style = {{maxWidth: '95%'}} src="images/Union_Forces_35_Star_Flag.gif" alt="Image failed to load" />
+          <p >Your text paragraph goes here...</p>
+        </div>
+      </div>
+ 
+      
+    </div>
+    )
+    
+  }
+
+  if(toggler === 8){
+      return(
+        <div>
+         <h1 className = "trueheader">Cipher Machine</h1>
+     {/* <div className="left-section">
+    <div className="button-container">
+
+      <button className="circle-button"onClick= {mainButtons.bind(null, 2)}>Classical Ciphers</button>
+      <button className="circle-button" onClick= {mainButtons.bind(null, 6)}>View</button>
+      <button className="circle-button" onClick= {mainButtons.bind(null, 7)}>Create</button>
+      
+    </div>
+  </div>
+  <div>SOMETHING</div>
+  <button onClick= {mainButtons.bind(null, 0)}>Back</button> */}
+  {/* // make back button seperate component */}
+  <div style={{ display: 'flex' }}>
+    
+  <p className= "lefthandtext">
+  Welcome to the Full Stack Cipher Machine, a web application that allows users to explore, create, and solve custom ciphers all in one unified platform. Created by a computer science student, this project leverages React for an intuitive frontend, Express for a robust backend, and PostgreSQL for efficient database management. Engage with the cryptography community by sharing your ciphers, solving others', and exploring classical algorithms. The application also boasts an immersive 3D model of the Cipher Machine, heightening the visual experience. I hope you enjoy this journey of encrypton and decryption!
+</p>
+
+
+
+
+
+  <div class="right-section">
+  <Canvas><ambientLight/> <spotLight intensity={0.9} angle = {0.9}  penumbra = {1}  position = {[10,115,20]} castShadow /> <Model/> <OrbitControls enablePan ={true} enableRotate = {true} enableZoom = {true}/></Canvas>
+   {/* <h1>PLEASE WORK</h1>
+   <h1> Making </h1> */}
+   </div>
+          </div>
+          <button  onClick= {mainButtons.bind(null, 0)}>Back</button>
+
+          
+          </div>
+      )
+  }
+
+  if(toggler === 9){
+    return(
+      <div>
+       <h1 className = "trueheader">Cipher Machine</h1>
+   {/* <div className="left-section">
+  <div className="button-container">
+
+    <button className="circle-button"onClick= {mainButtons.bind(null, 2)}>Classical Ciphers</button>
+    <button className="circle-button" onClick= {mainButtons.bind(null, 6)}>View</button>
+    <button className="circle-button" onClick= {mainButtons.bind(null, 7)}>Create</button>
+    
+  </div>
+</div>
+<div>SOMETHING</div>
+<button onClick= {mainButtons.bind(null, 0)}>Back</button> */}
+{/* // make back button seperate component */}
+<div style={{ display: 'flex' }}>
+  
+<p className= "lefthandtext">
+Here are the sources for this project (free use with cc license):
+
+<br/> 
+<br/>3D Model: "Retro computer" by Urpo
+
+: https://sketchfab.com/3d-models/retro-computer-f844c0357d284fd8baa1435e9ff31bb2
+License: CC-BY-4.0
+Creator: Urpo
+
+<br/> 
+<br/>
+Caesar Pic:
+
+ https://freesvg.org/julius-caesar-bust-3d-statue
+
+ <br/> 
+<br/>
+Cromwell Pic:
+
+https://creazilla.com/nodes/7327637-portrait-of-oliver-cromwell-1599-1658-lord-protector-of-england-by-studio-of-rob
+
+<br/> 
+<br/>
+Union Flag Pic:
+
+https://en.wikipedia.org/wiki/File:Union_Forces_35_Star_Flag.gif
+</p>
+
+
+
+
+
+<div class="right-section">
+<Canvas><ambientLight/> <spotLight intensity={0.9} angle = {0.9}  penumbra = {1}  position = {[10,115,20]} castShadow /> <Model/> <OrbitControls enablePan ={true} enableRotate = {true} enableZoom = {true}/></Canvas>
+ {/* <h1>PLEASE WORK</h1>
+ <h1> Making </h1> */}
+ </div>
+        </div>
+        <button  onClick= {mainButtons.bind(null, 0)}>Back</button>
+
+        
+        </div>
+    )
+}
+
+
 }
 
 export default App;
