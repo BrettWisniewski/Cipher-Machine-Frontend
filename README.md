@@ -89,9 +89,9 @@ Check out the demo video showcasing the Full Stack Cipher Machine in action:
 
 ## Technologies Used
 
-- Frontend: React
-- Backend: Node.js (Express)
-- Database: PostgreSQL
+- Frontend: ![React](https://img.shields.io/badge/Frontend-React-blue?logo=react)
+- Backend: ![Node.js](https://img.shields.io/badge/Backend-Node.js-green?logo=node.js) ![Express](https://img.shields.io/badge/-Express-lightgrey)
+- Database: ![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue?logo=postgresql)
 
 ## Getting Started
 
