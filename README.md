@@ -66,6 +66,53 @@ https://github.com/BrettWisniewski/Cyrptography-Basics/assets/86760183/4b41001b-
 This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
 ### Deployment
+Full Stack Cipher Machine
+
+Welcome to the Full Stack Cipher Machine repository! This innovative web application allows users to explore, create, and solve custom ciphers in an engaging and interactive environment.
+
+Full Stack Cipher Machine Demo
+
+Features
+Explore Ciphers: Delve into the captivating world of ciphers by interacting with a visually stunning 3D model of the Cipher Machine. Engage with classical algorithms and learn the art of encryption and decryption.
+
+Create and Share Ciphers: Unleash your creativity by crafting your own custom ciphers. Share your creations with the cryptography community, allowing others to attempt solving your codes.
+
+Interactive Database: Interact with the PostgreSQL database seamlessly. Add new items, retrieve and display stored data effortlessly.
+
+User-friendly Interface: The application boasts an intuitive user interface powered by React on the frontend, ensuring a smooth and enjoyable user experience.
+
+Demo Video
+Check out the demo video showcasing the Full Stack Cipher Machine in action:
+
+Link to the Demo Video
+
+Technologies Used
+Frontend: React
+Backend: Node.js (Express)
+Database: PostgreSQL
+Getting Started
+To run the Full Stack Cipher Machine on your local machine, follow these steps:
+
+Clone this repository: git clone https://github.com/your_username/Full-Stack-Cipher-Machine.git
+Navigate to the project directory: cd Full-Stack-Cipher-Machine
+Install the dependencies: npm install
+Start the development server: npm start
+Open your browser and visit: http://localhost:3000
+Contributing
+We welcome contributions from the open-source community! If you'd like to enhance the Full Stack Cipher Machine or report any issues, please create a pull request or submit an issue in the repository.
+
+License
+The Full Stack Cipher Machine is licensed under the MIT License. Feel free to modify and use the code for personal or commercial projects.
+
+Acknowledgments
+We would like to express our gratitude to the creators of the 3D model and the resources used in this project:
+
+3D Model: "Retro computer" by Urpo (link_to_3d_model_license)
+Caesar Pic: (link_to_caesar_pic_license)
+Cromwell Pic: (link_to_cromwell_pic_license)
+Union Flag Pic: (link_to_union_flag_pic_license)
+Thank you for visiting the Full Stack Cipher Machine repository. Happy ciphering!
+
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
