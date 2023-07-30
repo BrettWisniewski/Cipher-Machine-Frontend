@@ -90,9 +90,17 @@ Welcome to the Full Stack Cipher Machine repository! This innovative web applica
 
 Check out the demo video showcasing the Full Stack Cipher Machine in action:
 
-Manipulating the 3d object: 
+3D Model Interaction: 
 
 https://github.com/BrettWisniewski/Cyrptography-Basics/assets/86760183/7eccab88-aab6-4dde-95a5-e5929d64b497
+
+Testing Classical Ciphers:
+
+
+
+https://github.com/BrettWisniewski/Cyrptography-Basics/assets/86760183/27f52180-7de9-4c31-b9d1-f734fd14ce98
+
+
 
 
 
