@@ -106,6 +106,14 @@ Adding and Interacting with the Database:
 
 https://github.com/BrettWisniewski/Cyrptography-Basics/assets/86760183/d4af510b-5e52-42b7-aa8c-831d5993368c
 
+About and Credits Page:
+
+
+
+https://github.com/BrettWisniewski/Cyrptography-Basics/assets/86760183/bbefcc79-4d65-4ec3-81ae-b5fb152ffdcc
+
+
+
 
 
 
