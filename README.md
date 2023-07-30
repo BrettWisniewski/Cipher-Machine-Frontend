@@ -94,11 +94,18 @@ Check out the demo video showcasing the Full Stack Cipher Machine in action:
 
 https://github.com/BrettWisniewski/Cyrptography-Basics/assets/86760183/7eccab88-aab6-4dde-95a5-e5929d64b497
 
-Testing Classical Ciphers:
+Classical Ciphers:
 
 
 
 https://github.com/BrettWisniewski/Cyrptography-Basics/assets/86760183/27f52180-7de9-4c31-b9d1-f734fd14ce98
+
+
+Adding and Interacting with the Database: 
+
+
+https://github.com/BrettWisniewski/Cyrptography-Basics/assets/86760183/d4af510b-5e52-42b7-aa8c-831d5993368c
+
 
 
 
