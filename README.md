@@ -65,8 +65,7 @@ https://github.com/BrettWisniewski/Cyrptography-Basics/assets/86760183/4b41001b-
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
-Full Stack Cipher Machine
+# Full Stack Cipher Machine
 
 Welcome to the Full Stack Cipher Machine repository! This innovative web application allows users to explore, create, and solve custom ciphers in an engaging and interactive environment.
 
