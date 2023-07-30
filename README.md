@@ -81,17 +81,22 @@ Welcome to the Full Stack Cipher Machine repository! This innovative web applica
 
 - **User-friendly Interface:** The application boasts an intuitive user interface powered by React on the frontend, ensuring a smooth and enjoyable user experience.
 
-## Demo Video
-
-Check out the demo video showcasing the Full Stack Cipher Machine in action:
-
-[Link to the Demo Video](link_to_your_video)
-
 ## Technologies Used
 
 - Frontend: ![React](https://img.shields.io/badge/Frontend-React-blue?logo=react)
 - Backend: ![Node.js](https://img.shields.io/badge/Backend-Node.js-green?logo=node.js) ![Express](https://img.shields.io/badge/-Express-lightgrey)
 - Database: ![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue?logo=postgresql)
+## Demo Video
+
+Check out the demo video showcasing the Full Stack Cipher Machine in action:
+
+Manipulating the 3d object: 
+
+https://github.com/BrettWisniewski/Cyrptography-Basics/assets/86760183/7eccab88-aab6-4dde-95a5-e5929d64b497
+
+
+
+
 
 ## Getting Started
 
