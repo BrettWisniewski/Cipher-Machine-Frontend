@@ -83,7 +83,7 @@ Welcome to the Full Stack Cipher Machine repository! This innovative web applica
 
 ## Technologies Used
 
-- Frontend: ![React](https://img.shields.io/badge/Frontend-React-blue?logo=react)
+- Frontend: ![React](https://img.shields.io/badge/Frontend-React-blue?logo=react) ![Three.js](https://img.shields.io/badge/-Three.js-orange)
 - Backend: ![Node.js](https://img.shields.io/badge/Backend-Node.js-green?logo=node.js) ![Express](https://img.shields.io/badge/-Express-lightgrey)
 - Database: ![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue?logo=postgresql)
 ## Demo Video
