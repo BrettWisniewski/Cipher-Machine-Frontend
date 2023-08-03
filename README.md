@@ -3,7 +3,6 @@
 
 Welcome to the Full Stack Cipher Machine repository! This innovative web application allows users to explore, create, and solve custom ciphers in an engaging and interactive environment.
 
-[![Full Stack Cipher Machine Demo](link_to_your_video)](link_to_your_video)
 
 ## Features
 
@@ -77,7 +76,8 @@ The Full Stack Cipher Machine is licensed under the [MIT License](link_to_licens
 
 We would like to express our gratitude to the creators of the 3D model and the resources used in this project:
 
-- 3D Model: "Retro computer" by Urpo (link_to_3d_model_license)
-- Caesar Pic: (link_to_caesar_pic_license)
-- Cromwell Pic: (link_to_cromwell_pic_license)
-- Union Flag Pic: (link_to_union_flag_pic_license)
+- 3D Model: "Retro computer" by Urpo: https://sketchfab.com/3d-models/retro-computer-f844c0357d284fd8baa1435e9ff31bb2
+- Caesar Pic: https://freesvg.org/julius-caesar-bust-3d-statue
+- Cromwell Pic: https://creazilla.com/nodes/7327637-portrait-of-oliver-cromwell-1599-1658-lord-protector-of-england-by-studio-of-rob
+- Union Flag Pic: https://en.wikipedia.org/wiki/File:Union_Forces_35_Star_Flag.gif
+
