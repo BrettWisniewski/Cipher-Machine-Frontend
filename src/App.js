@@ -442,6 +442,7 @@ if(toggler === 5){
       return(
         <div>
          <h1 className = "trueheader">Cipher Machine</h1>
+        
   
   <div style={{ display: 'flex' }}>
     
