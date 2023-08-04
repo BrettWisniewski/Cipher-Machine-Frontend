@@ -57,13 +57,18 @@ https://github.com/BrettWisniewski/Cipher-Machine-Frontend/assets/86760183/38ad0
 
 
 
-https://github.com/BrettWisniewski/Cyrptography-Basics/assets/86760183/27f52180-7de9-4c31-b9d1-f734fd14ce98
+
 
 
 Adding and Interacting with the Database: 
 
 
-https://github.com/BrettWisniewski/Cipher-Machine-Frontend/assets/86760183/d4af510b-5e52-42b7-aa8c-831d5993368c
+https://github.com/BrettWisniewski/Cipher-Machine-Frontend/assets/86760183/a76b3045-8b8c-40a3-bdbb-d8be46084805
+
+
+
+
+
 
 About and Credits Page:
 
