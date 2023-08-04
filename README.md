@@ -66,12 +66,14 @@ https://github.com/BrettWisniewski/Cyrptography-Basics/assets/86760183/bbefcc79-
 ## Getting Started
 
 To run the Full Stack Cipher Machine on your local machine, follow these steps:
-
-1. Clone this repository: `git clone https://github.com/your_username/Full-Stack-Cipher-Machine.git`
-2. Navigate to the project directory: `cd Full-Stack-Cipher-Machine`
-3. Install the dependencies: `npm install`
-4. Start the development server: `npm start`
-5. Open your browser and visit: `http://localhost:3000`
+1. Make sure you have the following tools installed on your machine:
+Node.js (https://nodejs.org)
+PostgreSQL database (https://www.postgresql.org)
+2. Clone this repository: `git clone https://github.com/your_username/Full-Stack-Cipher-Machine.git`
+3. Navigate to the project directory: `cd Full-Stack-Cipher-Machine`
+4. Install the dependencies: `npm install`
+5. Start the development server: `npm start`
+6. Open your browser and visit: `http://localhost:3000`
 
 ## Contributing
 
