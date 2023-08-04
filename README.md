@@ -1,7 +1,7 @@
 
 # Full Stack Cipher Machine
 
-Welcome to the Full Stack Cipher Machine repository! This innovative web application allows users to explore, create, and solve custom ciphers in an engaging and interactive environment.
+Welcome to the Full Stack Cipher Machine repository! This innovative web application allows users to explore, create, and solve custom ciphers in an engaging and interactive environment. Make sure to visit the Cipher-Machine-Backend afterwards to finish setting up the application!
 
 ## Table of Contents
 
