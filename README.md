@@ -32,6 +32,9 @@ Welcome to the Full Stack Cipher Machine repository! This innovative web applica
 
 Check out the demo video showcasing the Full Stack Cipher Machine in action:
 
+Test Video:
+
+[About and Credits](https://github.com/BrettWisniewski/Cipher-Machine-Frontend/assets/86760183/ad664b51-0f9a-4f1c-8085-9566c60e074a)
 3D Model Interaction: 
 
 https://github.com/BrettWisniewski/Cyrptography-Basics/assets/86760183/7eccab88-aab6-4dde-95a5-e5929d64b497
