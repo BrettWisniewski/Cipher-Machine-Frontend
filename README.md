@@ -53,13 +53,17 @@ Classical Ciphers:
 
 
 
+https://github.com/BrettWisniewski/Cipher-Machine-Frontend/assets/86760183/38ad052a-22c8-40b7-8cb2-89180a03ad6c
+
+
+
 https://github.com/BrettWisniewski/Cyrptography-Basics/assets/86760183/27f52180-7de9-4c31-b9d1-f734fd14ce98
 
 
 Adding and Interacting with the Database: 
 
 
-https://github.com/BrettWisniewski/Cyrptography-Basics/assets/86760183/d4af510b-5e52-42b7-aa8c-831d5993368c
+https://github.com/BrettWisniewski/Cipher-Machine-Frontend/assets/86760183/d4af510b-5e52-42b7-aa8c-831d5993368c
 
 About and Credits Page:
 
