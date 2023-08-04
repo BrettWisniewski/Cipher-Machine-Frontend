@@ -61,7 +61,7 @@ About and Credits Page:
 
 
 
-https://github.com/BrettWisniewski/Cyrptography-Basics/assets/86760183/bbefcc79-4d65-4ec3-81ae-b5fb152ffdcc
+https://github.com/BrettWisniewski/Cipher-Machine-Frontend/assets/86760183/fe2cd7c3-4002-406b-99e6-9d3f72a7451c
 
 
 
