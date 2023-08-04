@@ -99,7 +99,7 @@ PostgreSQL database (https://www.postgresql.org)
 
 ## Contributing
 
-We welcome contributions from the open-source community! If you'd like to enhance the Full Stack Cipher Machine or report any issues, please create a pull request or submit an issue in the repository.
+I welcome contributions from the open-source community! If you'd like to enhance the Full Stack Cipher Machine or report any issues, please create a pull request or submit an issue in the repository.
 
 ## License
 
@@ -107,7 +107,7 @@ The Full Stack Cipher Machine is licensed under the [MIT License](link_to_licens
 
 ## Acknowledgments
 
-We would like to express our gratitude to the creators of the 3D model and the resources used in this project:
+I would like to express our gratitude to the creators of the 3D model and the resources used in this project:
 
 - 3D Model: "Retro computer" by Urpo: https://sketchfab.com/3d-models/retro-computer-f844c0357d284fd8baa1435e9ff31bb2
 - Caesar Pic: https://freesvg.org/julius-caesar-bust-3d-statue
